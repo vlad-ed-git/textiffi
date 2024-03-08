@@ -9,8 +9,8 @@ abstract class LogErrors {
   ///* [logToServer]: Boolean flag indicating if the error should be logged to a remote server. Defaults to false.
   void log(
       {required String callerClass,
-        required String callerMethod,
-        required dynamic error,
-        StackTrace? stackTrace,
-        bool logToServer = false});
+      required String callerMethod,
+      required dynamic error,
+      StackTrace? stackTrace,
+      bool logToServer = false});
 }

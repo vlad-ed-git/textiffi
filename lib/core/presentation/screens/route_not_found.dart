@@ -9,7 +9,9 @@ class RouteNotFound extends StatelessWidget {
       extendBodyBehindAppBar: true,
       body: SafeArea(
         child: Center(
-          child: Text('404!',),
+          child: Text(
+            '404!',
+          ),
         ),
       ),
     );

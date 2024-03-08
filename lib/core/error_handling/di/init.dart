@@ -3,7 +3,7 @@ import 'package:textiffi/core/error_handling/data/repository/log_errors_impl.dar
 import 'package:textiffi/core/error_handling/domain/repository/log_errors.dart';
 
 /// Initializes the dependency injection container with required services.
-void init(){
+void init() {
   final GetIt di = GetIt.instance
     ..registerLazySingleton<LogErrors>(LogErrorsImpl.new);
 }

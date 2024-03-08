@@ -44,5 +44,4 @@ class MainInit {
   static void dispose() {
     // for any dispose work needed to be done on app disposed | note that this is not a async method
   }
-
 }

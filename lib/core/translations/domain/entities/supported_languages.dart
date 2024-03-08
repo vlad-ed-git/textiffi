@@ -13,7 +13,6 @@ enum SupportedLanguages {
   final String languageName;
   final String countryCode;
 
-
   /// Returns a Locale object based on the provided language code.
   ///* Throws an exception if the language code is not found in the enum.
   ///* [languageCode]: The language code to get the corresponding Locale for.
@@ -26,6 +25,6 @@ enum SupportedLanguages {
       return Locale(defaultLanguage.languageCode, defaultLanguage.countryCode);
     }
   }
-  
+
   static const SupportedLanguages defaultLanguage = SupportedLanguages.english;
 }

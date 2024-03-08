@@ -5,15 +5,15 @@ class LogErrorsImpl implements LogErrors {
   @override
   void log(
       {required String callerClass,
-        required String callerMethod,
-        required dynamic error,
-        StackTrace? stackTrace,
-        bool logToServer = false}){
-      kDebugPrint('$callerClass.$callerMethod\n'
-          'Error: $error\n'
-          'Stacktrace: $stackTrace\n');
-      if(!logToServer)return;
+      required String callerMethod,
+      required dynamic error,
+      StackTrace? stackTrace,
+      bool logToServer = false}) {
+    kDebugPrint('$callerClass.$callerMethod\n'
+        'Error: $error\n'
+        'Stacktrace: $stackTrace\n');
+    if (!logToServer) return;
 
-      // TODO LOG TO SERVER IF REQUIRED
+    // TODO LOG TO SERVER IF REQUIRED
   }
 }

@@ -11,7 +11,6 @@ final GoRouter goRouter = GoRouter(
   restorationScopeId: 'amos_music_random_id',
   routes: AppRoutes.values.map((e) => e.getRoute()).toList(growable: false),
   onException: (BuildContext ctx, GoRouterState state, GoRouter router) {
-
     router.go(AppRoutes.noRouteFound.path, extra: state.uri.toString());
   },
 );

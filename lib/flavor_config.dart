@@ -21,11 +21,11 @@ class FlavorConfig {
   }
 
   FlavorConfig._internal(
-      this.appTitle,
-      this.apiEndpoint,
-      this.packageName,
-      this.isDevelopment,
-      );
+    this.appTitle,
+    this.apiEndpoint,
+    this.packageName,
+    this.isDevelopment,
+  );
 
   static FlavorConfig get instance => _instance!;
 }

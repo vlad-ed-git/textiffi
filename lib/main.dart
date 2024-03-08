@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:textiffi/core/presentation/theme/app_theme.dart';
 import 'package:textiffi/core/routing/go_router_config.dart';
 import 'package:textiffi/core/translations/domain/entities/supported_languages.dart';
 import 'package:textiffi/flavor_config.dart';
@@ -11,7 +12,6 @@ Future<void> mainCommon() async {
   runApp(const MyApp());
 }
 
-
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -22,9 +22,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return  GestureDetector(
+    return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
+
         /// Remove any keyboard displayed if no editable element is focused
         if (!currentFocus.hasPrimaryFocus) {
           FocusManager.instance.primaryFocus?.unfocus();
@@ -38,10 +39,8 @@ class _MyAppState extends State<MyApp> {
         locale: SupportedLanguages.getLocale(
             languageCode: SupportedLanguages.defaultLanguage.languageCode),
         debugShowCheckedModeBanner: FlavorConfig.instance.isDevelopment,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
+        theme: appTheme,
+        themeMode: defaultThemeMode,
       ),
     );
   }
