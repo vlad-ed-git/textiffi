@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:json_annotation/json_annotation.dart';
 
+/// Defines the supported languages for the app
 enum SupportedLanguages {
   @JsonValue('en')
   english('en', 'English', 'US');
@@ -12,6 +13,10 @@ enum SupportedLanguages {
   final String languageName;
   final String countryCode;
 
+
+  /// Returns a Locale object based on the provided language code.
+  ///* Throws an exception if the language code is not found in the enum.
+  ///* [languageCode]: The language code to get the corresponding Locale for.
   static Locale getLocale({required String languageCode}) {
     try {
       final language = SupportedLanguages.values
@@ -21,6 +26,6 @@ enum SupportedLanguages {
       return Locale(defaultLanguage.languageCode, defaultLanguage.countryCode);
     }
   }
-
+  
   static const SupportedLanguages defaultLanguage = SupportedLanguages.english;
 }

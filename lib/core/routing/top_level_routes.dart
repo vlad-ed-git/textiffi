@@ -10,7 +10,7 @@ enum AppRoutes {
   const AppRoutes(this.routeName);
   final String routeName;
 
-  // home is the initial path '/'
+  /// [home] is the initial path '/'
   String get path => this == home ? '/' : '/$routeName';
 
   RouteBase getRoute() {
