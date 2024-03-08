@@ -2,5 +2,6 @@
   "app_title" : "Textiffi",
   "select_an_image_title" : "Take a photo to get started",
   "select_an_image_description" : "Take a photo with your camera to start recognition",
-  "select_an_image_button_label" : "Get Started"
+  "select_an_image_button_label" : "Get Started",
+  "camera_permissions_error" : "Camera permissions are required to proceed."
 }

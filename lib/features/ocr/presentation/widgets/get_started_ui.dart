@@ -5,7 +5,8 @@ import 'package:textiffi/core/utils/context_ext.dart';
 
 class GetStartedUi extends StatelessWidget {
   final VoidCallback onClickGetStartedBtn;
-  const GetStartedUi({super.key, required this.onClickGetStartedBtn, });
+  final bool isLoading;
+  const GetStartedUi({super.key, required this.onClickGetStartedBtn, required this.isLoading, });
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,7 @@ class GetStartedUi extends StatelessWidget {
               bgColor: context.color.primaryContainer,
               onBgColor: context.color.onPrimaryContainer,
               onClick: onClickGetStartedBtn,
+              isLoading: isLoading,
               child: BtnTxt(
                   context.translated.select_an_image_button_label
               ),

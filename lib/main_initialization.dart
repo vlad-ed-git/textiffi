@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
-import 'package:textiffi/core/error_handling/domain/repository/log_errors.dart';
 import 'package:textiffi/core/error_handling/di/init.dart' as core_di;
+import 'package:textiffi/core/error_handling/domain/repository/log_errors.dart';
+import 'package:textiffi/features/ocr/di/ocr_di.dart' as ocr_di;
 
 class MainInit {
   static Future<void> init() async {
@@ -39,6 +40,7 @@ class MainInit {
 
   static Future<void> _initDependencies() async {
     core_di.init();
+    ocr_di.init();
   }
 
   static void dispose() {

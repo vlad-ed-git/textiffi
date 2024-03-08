@@ -1,0 +1,3 @@
+enum OcrPermissions{
+  camera;
+}

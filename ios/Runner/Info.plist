@@ -36,5 +36,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+    <string>Camera permissions are required in order to take a photo.</string>
 </dict>
 </plist>
