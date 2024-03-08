@@ -13,3 +13,11 @@ class GetPhotoFromCameraEvent extends OcrEvent {
   @override
   List<Object> get props => [];
 }
+
+class StartRecognitionEvent extends OcrEvent {
+  final Uint8List? recentPhoto;
+  StartRecognitionEvent(this.recentPhoto);
+
+  @override
+  List<Object> get props => [];
+}

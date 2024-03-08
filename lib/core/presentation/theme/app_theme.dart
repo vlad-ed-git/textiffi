@@ -68,7 +68,7 @@ const darkColorScheme = ColorScheme(
   scrim: Color(0xFF000000),
 );
 
-final appLightTheme =  ThemeData(
+final appLightTheme = ThemeData(
   useMaterial3: true,
   textTheme: fontStyle,
   colorScheme: lightColorScheme,

@@ -4,5 +4,10 @@
   "select_an_image_description" : "Take a photo with your camera to start recognition",
   "select_an_image_button_label" : "Get Started",
   "camera_permissions_error" : "Camera permissions are required to proceed.",
-  "taking_photo_error" : "Failed to take a photo! Please re-try."
+  "taking_photo_error" : "Failed to take a photo! Please re-try.",
+    "preview_image_title" : "Preview Image",
+    "preview_image_description" : "You have just taken this image. Scroll down to preview & recognize text",
+    "start_recognition_button_label" : "Recognize Text",
+     "cancel_preview_image_button_label" : "Re Take",
+     "recognition_failed_error" : "Failed to recognized text"
 }

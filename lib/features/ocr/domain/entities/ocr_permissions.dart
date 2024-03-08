@@ -1,3 +1,3 @@
-enum OcrPermissions{
+enum OcrPermissions {
   camera;
 }

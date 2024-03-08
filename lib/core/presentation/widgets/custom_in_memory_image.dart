@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class CustomInMemoryImage extends StatelessWidget {
   final Uint8List image;
-  final double width, height;
+  final double? width, height;
   const CustomInMemoryImage({
     super.key,
     required this.image,

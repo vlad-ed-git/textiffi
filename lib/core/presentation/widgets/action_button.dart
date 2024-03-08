@@ -46,7 +46,11 @@ class ActionBtn extends StatelessWidget {
               borderRadius: BorderRadius.circular(radius),
             ),
           )),
-      onPressed: onClick,
+      onPressed: () {
+        if (!isLoading) {
+          onClick();
+        }
+      },
       child: child,
     );
   }

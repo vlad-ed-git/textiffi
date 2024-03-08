@@ -13,26 +13,50 @@ part 'ocr_state.dart';
 class OcrBloc extends Bloc<OcrEvent, OcrState> {
   final RequestPermissionsUseCase _requestPermissionsUseCase;
   final GetPhotoFromCameraUseCase _getPhotoFromCameraUseCase;
-  OcrBloc(this._requestPermissionsUseCase, this._getPhotoFromCameraUseCase,) : super(OcrInitial()) {
+  final StartRecognitionUseCase _startRecognitionUseCase;
+  OcrBloc(
+    this._requestPermissionsUseCase,
+    this._getPhotoFromCameraUseCase,
+    this._startRecognitionUseCase,
+  ) : super(OcrInitial()) {
     on<RequestCameraPermissionEvent>(_onRequestCameraPermissionEvent);
     on<GetPhotoFromCameraEvent>(_onGetPhotoFromCameraEvent);
+    on<StartRecognitionEvent>(_onStartRecognitionEvent);
   }
 
-  FutureOr<void> _onRequestCameraPermissionEvent(RequestCameraPermissionEvent event, Emitter<OcrState> emit) async{
+  FutureOr<void> _onRequestCameraPermissionEvent(
+      RequestCameraPermissionEvent event, Emitter<OcrState> emit) async {
     emit(LoadingState());
     final result = await _requestPermissionsUseCase(OcrPermissions.camera);
-    if(result.isError || !result.asSuccess())
+    if (result.isError || !result.asSuccess())
       emit(CameraPermissionsDeniedState());
     else
       emit(CameraPermissionsGrantedState());
   }
 
-  FutureOr<void> _onGetPhotoFromCameraEvent(GetPhotoFromCameraEvent event, Emitter<OcrState> emit) async{
+  FutureOr<void> _onGetPhotoFromCameraEvent(
+      GetPhotoFromCameraEvent event, Emitter<OcrState> emit) async {
     emit(LoadingState());
     final result = await _getPhotoFromCameraUseCase();
-    if(result.isError)
+    if (result.isError)
       emit(FailedToTakePhotoState());
     else
       emit(PhotoTakenState(result.asSuccess()));
+  }
+
+  FutureOr<void> _onStartRecognitionEvent(
+      StartRecognitionEvent event, Emitter<OcrState> emit) async {
+    final photo = event.recentPhoto;
+    if (photo == null) {
+      emit(FailedToRecognizeTextState());
+      return;
+    }
+
+    emit(LoadingState());
+    final result = await _startRecognitionUseCase(photo);
+    if (result.isError)
+      emit(FailedToRecognizeTextState());
+    else
+      emit(TextRecognizedState(result.asSuccess()));
   }
 }

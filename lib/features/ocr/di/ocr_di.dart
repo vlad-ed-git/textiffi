@@ -10,7 +10,9 @@ void init() {
   di.registerLazySingleton<OCRRepository>(() => OCRRepositoryImpl(di()));
   di.registerFactory(() => RequestPermissionsUseCase(di()));
   di.registerFactory(() => GetPhotoFromCameraUseCase(di()));
+  di.registerFactory(() => StartRecognitionUseCase(di()));
   di.registerFactory<OcrBloc>(() => OcrBloc(
+        di(),
         di(),
         di(),
       ));

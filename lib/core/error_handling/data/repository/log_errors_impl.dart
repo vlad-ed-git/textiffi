@@ -8,7 +8,7 @@ class LogErrorsImpl implements LogErrors {
       required String callerMethod,
       required dynamic error,
       StackTrace? stackTrace,
-      bool logToServer = false}) async{
+      bool logToServer = false}) async {
     kDebugPrint('$callerClass.$callerMethod\n'
         'Error: $error\n'
         'Stacktrace: $stackTrace\n');

@@ -29,9 +29,22 @@ class FailedToTakePhotoState extends OcrState {
   List<Object> get props => [];
 }
 
-class PhotoTakenState  extends OcrState {
+class PhotoTakenState extends OcrState {
   final Uint8List imageBytes;
   PhotoTakenState(this.imageBytes);
+
+  @override
+  List<Object> get props => [];
+}
+
+class FailedToRecognizeTextState extends OcrState {
+  @override
+  List<Object> get props => [];
+}
+
+class TextRecognizedState extends OcrState {
+  final List<String> text;
+  TextRecognizedState(this.text);
 
   @override
   List<Object> get props => [];

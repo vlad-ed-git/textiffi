@@ -13,4 +13,8 @@ abstract class OCRRepository {
   /// Captures an image using the camera.
   ///* Returns a [Future] that completes with an [Either] containing a [Failure] if the request failed, or a [Uint8List] representing the captured image data if successful
   Future<Either<Failure, Uint8List>> takeCameraPhoto();
+
+  /// Starts text recognition given image [imageBytes]
+  ///* Returns a [Future] that completes with an [Either] containing a [Failure] if the request failed, or the recognized text as a `List` of `String`s
+  Future<Either<Failure, List<String>>> startRecognition(Uint8List imageBytes);
 }
