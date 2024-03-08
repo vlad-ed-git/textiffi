@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:textiffi/core/presentation/theme/font_style.dart';
 
-final ThemeData appTheme = ThemeData(
-  useMaterial3: true,
-  textTheme: fontStyle,
-);
-
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: Color(0xFF9C4238),
@@ -73,14 +68,16 @@ const darkColorScheme = ColorScheme(
   scrim: Color(0xFF000000),
 );
 
-final darkTheme = appTheme.copyWith(
-  brightness: Brightness.dark,
-  colorScheme: darkColorScheme,
-);
-
-final lightTheme = appTheme.copyWith(
+final appLightTheme =  ThemeData(
+  useMaterial3: true,
+  textTheme: fontStyle,
   colorScheme: lightColorScheme,
   brightness: Brightness.light,
+);
+
+final darkTheme = appLightTheme.copyWith(
+  brightness: Brightness.dark,
+  colorScheme: darkColorScheme,
 );
 
 const ThemeMode defaultThemeMode = ThemeMode.light;

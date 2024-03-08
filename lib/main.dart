@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
         locale: SupportedLanguages.getLocale(
             languageCode: SupportedLanguages.defaultLanguage.languageCode),
         debugShowCheckedModeBanner: FlavorConfig.instance.isDevelopment,
-        theme: appTheme,
+        theme: appLightTheme,
         themeMode: defaultThemeMode,
       ),
     );
