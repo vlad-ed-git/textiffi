@@ -7,7 +7,7 @@ abstract class LogErrors {
   ///* [error]: The exception object to be logged.
   ///* [stackTrace]: Optional stack trace associated with the error.
   ///* [logToServer]: Boolean flag indicating if the error should be logged to a remote server. Defaults to false.
-  void log(
+  Future<void> log(
       {required String callerClass,
       required String callerMethod,
       required dynamic error,

@@ -14,12 +14,25 @@ class LoadingState extends OcrState {
   List<Object> get props => [];
 }
 
-class OnCameraPermissionsDeniedState extends OcrState {
+class CameraPermissionsDeniedState extends OcrState {
   @override
   List<Object> get props => [];
 }
 
-class OnCameraPermissionsGrantedState extends OcrState {
+class CameraPermissionsGrantedState extends OcrState {
+  @override
+  List<Object> get props => [];
+}
+
+class FailedToTakePhotoState extends OcrState {
+  @override
+  List<Object> get props => [];
+}
+
+class PhotoTakenState  extends OcrState {
+  final Uint8List imageBytes;
+  PhotoTakenState(this.imageBytes);
+
   @override
   List<Object> get props => [];
 }

@@ -3,12 +3,12 @@ import 'package:textiffi/core/error_handling/domain/repository/log_errors.dart';
 
 class LogErrorsImpl implements LogErrors {
   @override
-  void log(
+  Future<void> log(
       {required String callerClass,
       required String callerMethod,
       required dynamic error,
       StackTrace? stackTrace,
-      bool logToServer = false}) {
+      bool logToServer = false}) async{
     kDebugPrint('$callerClass.$callerMethod\n'
         'Error: $error\n'
         'Stacktrace: $stackTrace\n');

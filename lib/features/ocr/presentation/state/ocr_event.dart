@@ -8,3 +8,8 @@ class RequestCameraPermissionEvent extends OcrEvent {
   @override
   List<Object> get props => [];
 }
+
+class GetPhotoFromCameraEvent extends OcrEvent {
+  @override
+  List<Object> get props => [];
+}

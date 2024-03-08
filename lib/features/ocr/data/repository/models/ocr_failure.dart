@@ -4,3 +4,8 @@ class PermissionsGrantingFailed extends Failure{
   @override
   List<Object?> get props => [];
 }
+
+class TakingPhotoFailed extends Failure{
+  @override
+  List<Object?> get props => [];
+}

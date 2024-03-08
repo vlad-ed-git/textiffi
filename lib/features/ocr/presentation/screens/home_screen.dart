@@ -57,9 +57,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
   /// Listens to state changes from the `OcrBloc`.
   void _listenToStateChange(BuildContext context, OcrState state) {
-    if (state is OnCameraPermissionsDeniedState) {
+    if (state is CameraPermissionsDeniedState) {
       context.showErrorSnack(context.translated.camera_permissions_error);
     }
-    if (state is OnCameraPermissionsGrantedState) {}
+
+    if (state is CameraPermissionsGrantedState) {
+      // show camera
+      _stateHandler?.add(GetPhotoFromCameraEvent());
+    }
+
+    if(state is FailedToTakePhotoState){
+      context.showErrorSnack(context.translated.taking_photo_error);
+    }
   }
 }

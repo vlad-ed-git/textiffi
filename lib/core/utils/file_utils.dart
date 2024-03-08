@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:path/path.dart';
 
@@ -15,4 +16,11 @@ Future<String> createFileAndReturnPathAtDir(
     await file.create(recursive: true);
   }
   return path;
+}
+
+extension FileUtils on File {
+  Future<Uint8List> toUint8List() async {
+    final bytes = await readAsBytes();
+    return Uint8List.fromList(bytes);
+  }
 }
